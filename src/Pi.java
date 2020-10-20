@@ -12,6 +12,7 @@ public class Pi {
                 altura=Float.parseFloat(alturaS);
                 area=base*altura/2;
                 System.out.println("El area del triangulo es: "+area);
+                ES.debug(1);
                 break;
             case 2:
                 ES.debug(2);
@@ -21,6 +22,7 @@ public class Pi {
                 break;
             default:
                 System.err.println("La intruccion elegida no existe en el programa!");
+                ES.debug(4);
                 break;
         }
     }
