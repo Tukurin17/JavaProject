@@ -1,7 +1,7 @@
 public class Factorial {
     public static void main (String[] args) {
         int n, f=1;
-        n=ES.leeN("Introduce el numero del que quieres calcular el factorial: ");
+        n=ES.leeN("Introduce el numero del que quieres calcular el Factorial: ");
         for (int i=1;i!=n+1;i++) {
             f=f*i;
         }
