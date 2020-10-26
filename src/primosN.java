@@ -1,11 +1,9 @@
 public class primosN {
     public static void main(String[] args) {
         int i;
-        boolean j;
         i=ES.leeN("Introduce un numero hasta donde llegar: ");
         for (int n=2;n!=i;n++) {
-            j=esPrimo(n);
-            if (j) {
+            if (esPrimo(n)) {
                 System.out.println(n);
             }
         }
