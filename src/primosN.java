@@ -3,7 +3,7 @@ public class primosN {
         int i;
         boolean j;
         i=ES.leeN("Introduce un numero hasta donde llegar: ");
-        for (int n=3;n!=i;n++) {
+        for (int n=2;n!=i;n++) {
             j=esPrimo(n);
             if (j) {
                 System.out.println(n);
@@ -11,10 +11,7 @@ public class primosN {
         }
     }
     static boolean esPrimo(int e) {
-        if (e==4) {
-            return false;
-        }
-        for (int x=2;x<e/2;x++) {
+        for (int x=2;x<=e/2;x++) {
             if (e%x == 0) {
                 return false;
             }
