@@ -26,8 +26,7 @@ public class Figuras {
         System.out.println("3.-" + op3);
         System.out.println("4.-" + op4);
         System.out.println("---------------");
-        int opcion = ES.leeN("Introduce la opcion: ");
-        return opcion;
+        return ES.leeN("Introduce la opcion: ");
     }
     static void cuadrado(int n, char c) {
         for (int i=0;i!=n;i++) {
