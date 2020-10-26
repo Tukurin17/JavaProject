@@ -1,12 +1,13 @@
-public class primosN {
+public class Nprimos {
     public static void main(String[] args) {
-        int i;
+        int i, c=1;
         boolean j;
-        i=ES.leeN("Introduce un numero hasta donde llegar: ");
-        for (int n=3;n!=i;n++) {
+        i=ES.leeN("Introduce el numero de primos que quieres: ");
+        for (int n=3;c<=i;n++) {
             j=esPrimo(n);
             if (j) {
                 System.out.println(n);
+                c++;
             }
         }
     }
