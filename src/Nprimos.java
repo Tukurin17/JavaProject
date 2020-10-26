@@ -11,7 +11,7 @@ public class Nprimos {
             }
         }
     }
-    public static boolean esPrimo(int e) {
+    static boolean esPrimo(int e) {
         if (e==4) {
             return false;
         }
