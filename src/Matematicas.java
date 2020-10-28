@@ -145,11 +145,4 @@ public class Matematicas {
     public static double aleatorio(int max) {
         return Math.floor(Math.random()*max+1);
     }
-    //-------------------------------------------------------------------------------------DEBUG
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static void fix(double x) {
-        System.out.println(ANSI_YELLOW+"Debug Nº: "+ANSI_RED+Math.round(x)+ANSI_RESET);
-    }
 }

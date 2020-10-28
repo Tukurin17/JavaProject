@@ -9,7 +9,6 @@ public class PruebaMates {
         prueba(Matematicas.factorial(8));
         prueba(Matematicas.mcd(20,10));
         prueba( Matematicas.potencia(2,3));
-        Matematicas.fix(3);
         Matematicas.cuadrado(3,'*');
         Matematicas.rectangulo(3,4,'*');
         Matematicas.triangulo(3,'*');
