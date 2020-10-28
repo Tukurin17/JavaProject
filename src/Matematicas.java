@@ -1,8 +1,7 @@
 public class Matematicas {
     //Mayor de 2 numeros
     public static int mayor2(int n1, int n2) {
-        int i=(n1>n2)?n1:n2;
-        return i;
+        return (n1>n2)?n1:n2;
     }
     //Mayor de 3 numeros
     public static int mayor3(int n1, int n2, int n3) {
@@ -51,8 +50,8 @@ public class Matematicas {
         return Math.round(decimal);
     }
     //Pasamos un numero decimal a binario
-    public static double decimalBinario(double numero) {
-        double exp=0, digito;
+    public static double decimalBinario(int numero) {
+        int exp=0, digito;
         double binario=0;
         while (numero!=0) {
             digito = numero%2;
@@ -117,6 +116,8 @@ public class Matematicas {
     }
     //Generamos un rombo con el numero de filas y un caracter pasado por parametro
     public static void rombo(int n, char c) {
+        int nn=n;
+        n=n+1;
         int e=n-1,f=1;
         for (int i=0;i!=n;i++) {
             System.out.println();
@@ -130,11 +131,7 @@ public class Matematicas {
             f=f+2;
         }
         System.out.println();
-        for (int j=0;j!=n+1;j++) {
-            System.out.print(c);
-        }
-        System.out.println();
-        for(int numBlancos=0,numCarac=(n*2)-1;numCarac>0;numBlancos++,numCarac-=2){
+        for(int numBlancos=1,numCarac=(nn*2)-1;numCarac>0;numBlancos++,numCarac-=2){
             for(int i=0; i<numBlancos;i++) {
                 System.out.print(" ");
             }
