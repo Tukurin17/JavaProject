@@ -1,6 +1,6 @@
 public class PruebaMates {
     public static void main (String[] args) {
-        int op=1, op2=1, n, j, i;
+        int op, op2, n, j, i;
         char c;
         do {
             pintar("-------------------------------", true);
@@ -127,7 +127,6 @@ public class PruebaMates {
                             default:
                                 pintar("La intruccion elegida no existe en el programa!", false);
                                 continuar();
-                                continue;
                         }
                     } while (op2!=0);
                     continuar();
@@ -140,7 +139,6 @@ public class PruebaMates {
                 default:
                     pintar("La intruccion elegida no existe en el programa!", false);
                     continuar();
-                    continue;
             }
         } while (op!=0);
     }
@@ -151,7 +149,6 @@ public class PruebaMates {
         else {
             System.err.println(x);
         }
-
     }
     static void continuar() {
         ES.leeDeTeclado("Pulsa \"ENTER\" para continuar...");
