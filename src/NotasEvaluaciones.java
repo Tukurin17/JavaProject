@@ -29,7 +29,7 @@ public class NotasEvaluaciones {
             }
             x++;
         } while (x!=i);
-        System.out.println("NOMBRE -- EVA1 -- EVA2 -- EVA3");
+        System.out.println("NOMBRE -- EVA1 -- EVA2 -- EVA3 -- MEDIA");
         System.out.println("--------------");
         for (int j=0;j!=k;j++) {
             if (!nombre[j].equals("")) {
@@ -37,6 +37,7 @@ public class NotasEvaluaciones {
                 for (int e=0;e!=3;e++) {
                     System.out.print(nota[j][e]);
                     if (e<2){System.out.print(" -- ");}
+                    else {System.out.print(" -- MEDIA: "+(nota[j][0]+nota[j][1]+nota[j][2])/3);}
                 }
                 System.out.println();
             }
