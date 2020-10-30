@@ -1,0 +1,50 @@
+public class ArrayNotas{
+	
+	public static void main(String[] args){
+		
+		//Antes de inicializar el array le preguntaremos al usuario cuantos alumnos va ha haber en el módulo para saber la longitud del array
+		int numAlu = ES.leeN("Introduzca el numero de alumnos que habrá en el modulo: ");
+		
+		//Inicializamos el array de alumnos, con la longitud que ha pedido el usuario. Tambien incializaremos el array de las notas que tendra dos dimensiones: La primera que será la misma longitud que el array de alumnos. La segunda que sera un 3 por que hay 3 evaluaciones
+		String[] nombres = new String[numAlu];
+		int[][] nota = new int[numAlu][3];
+		
+		//Con dos bucle for, iremos recorriendo las posiciones de los dos arrays e insertaremos el nombre y la nota de las evaluaciones del alumno
+		//Como hay un array de dos dimensiones, si o si hay que hacer dos bucles for. Uno dentro del otro para recorrer el array nota[][]
+		for(int i = 0; i < numAlu; i++){
+			
+			//En el bucle externo recorreremos el array nombres[] y preguntaremos al usuario los nombres de los alumnos, y lo ira insertando en su posicion
+			nombres[i] = ES.leeDeTeclado("Introduzca el nombre del alumno: ");
+			
+			
+			for(int j = 0; j < 3; j++){
+				
+				//Aqui pondremos las notas de los alumnos. Si estamos en la posicion 3 por ejemplo, este for ira recorriendo la posiciones notas[3][0(1ºevaluacion)] > notas[3][1( 2ºevaluacion)] > notas[3][2(3ºevaluacion)].  En cada posicion iremos poniendo las notas del alumno
+				nota[i][j] = ES.leeN("Introduzca la nota del alumno para la evaluacion " + (j+1) + " : ");
+				
+			}
+			
+		}
+		
+		//Por último, haremos otro bucle for calcado al anterior y que nos vaya dictando el nombre de los alumnos y sus notas. Imprimimos las notas de forma chuli y facil de ver para el usuario
+		for(int i = 0; i < numAlu; i++){
+			
+			//La instrucion print es para pintar algo pero que despues no haga un salto de linea. La instruccion println imprime lo que sea en la pantalla y despues es como si hiciera un enter.
+			System.out.print("Alumno: " + nombres[i] + "\t");
+			
+			for(int j = 0; j < 3; j++){
+			
+				System.out.print("Nota " + (j+1) + ": " + nota[i][j] + "\t");
+				
+			}
+			
+			System.out.println("");
+			
+		}
+		
+	}//main
+	
+}//class
+
+//IMPORTANTE: Esto de los arrays lo teneis que entender a un nivel casi instintivo. Si pasas de esto pensando en que te va a dar la nota constestando a otras preguntas vas mal. El examen del final del trimestre va a tener un array como minimo en cada pregunta y puede que varios de varias dimensiones.
+//Cualquier duda tal y como dijo Alejandro, me preguntas por el grupo o por privado. Los precios son iguales por ambos sitios.
