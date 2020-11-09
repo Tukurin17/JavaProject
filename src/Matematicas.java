@@ -36,6 +36,18 @@ public class Matematicas {
         }
         return true;
     }
+    //Metodo que devuelve una cantidad de numeros primos pasado por parametros
+    public static int[] nPrimos(int i) {
+        int[] numeros=new int[i];
+        int c=0;
+        for (int n=2;c!=i-1;n++) {
+            if (esPrimo(n)) {
+                numeros[c]=n;
+                c++;
+            }
+        }
+        return numeros;
+    }
     //Pasamos un numero binario a decimal
     public static double binarioDecimal(int n) {
         String i=n+"";
