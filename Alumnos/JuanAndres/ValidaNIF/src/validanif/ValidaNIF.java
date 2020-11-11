@@ -11,6 +11,7 @@ package validanif;
  */
 import ES.ES;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+
 public class ValidaNIF {
 
     /**
@@ -18,45 +19,50 @@ public class ValidaNIF {
      */
     static char[] letra;
     static String letraNIF2 = "TRWAGMYFPDXBNJZSQVHLCKE";
+
     public static void main(String[] args) {
-      
+        valida();
+    }
+    //Valida el NIF si falta alguna letra mandara una llamada al metodo letraNif y buscara la letra.
+    static void valida() {
         String respuesta;
-        boolean valido=false;
-        letra=letraNIF2.toCharArray();
-        do {            
-            respuesta=ES.leeDeTeclado("Introduce NIF");
-            valido = respuesta.matches("[0-9]{8}[A-Z]{1}");
-            
+        boolean valido = false;
+        do {
+            respuesta = ES.leeDeTeclado("Introduce NIF");
+            valido = respuesta.matches("[0-9]{8}[A-Z]{1}"); //Comprueba si el NIF es correcto añadira true si es correcto si no false
+
             if (!valido) {
                 System.err.println("Falta la LETRA");
                 valido = respuesta.matches("[0-9]{8}");
                 if (!valido) {
                     System.err.println("Faltan algun numero.");
-                    
-                }else{
-                    int n=Integer.parseInt(respuesta);
-                    respuesta=respuesta+letraNIF(n);
+
+                } else {
+                    int n = Integer.parseInt(respuesta);
+                    respuesta = respuesta + letraNIF(n);
                     System.out.println(respuesta);
                 }
-               
-            }else{
-                
+
+            } else {
+
             }
         } while (!valido);
         System.out.println("NIF correcto. ");
-  }
-   static char letraNIF(int n){
-            int resul=resto(n);
-            char letra=' ';
-            for (int i = 0; i < 22; i++) {
-                letra=(char)letraNIF2.charAt(resul);
-            }
-        return letra;
-                
     }
-   static int resto(int n){
-       int resultado = n%23;
-       System.out.println(resultado);
-       return resultado;
-   }
+
+    static char letraNIF(int n) {
+        int resul = resto(n);
+        char letra = ' ';
+        for (int i = 0; i < 22; i++) {
+            letra = (char) letraNIF2.charAt(resul);
+        }
+        return letra;
+
+    }
+
+    static int resto(int n) {
+        int resultado = n % 23;
+        System.out.println(resultado);
+        return resultado;
+    }
 }
