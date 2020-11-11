@@ -42,9 +42,6 @@ public class ValidaNIF {
                     respuesta = respuesta + letraNIF(n);
                     System.out.println(respuesta);
                 }
-
-            } else {
-
             }
         } while (!valido);
         System.out.println("NIF correcto. ");
