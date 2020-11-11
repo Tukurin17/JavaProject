@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package validanif;
+
+/**
+ *
+ * @author Juan Andres
+ */
+import ES.ES;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+public class ValidaNIF {
+
+    /**
+     * @param args the command line arguments
+     */
+    static char[] letra;
+    static String letraNIF2 = "TRWAGMYFPDXBNJZSQVHLCKE";
+    public static void main(String[] args) {
+      
+        String respuesta;
+        boolean valido=false;
+        letra=letraNIF2.toCharArray();
+        do {            
+            respuesta=ES.leeDeTeclado("Introduce NIF");
+            valido = respuesta.matches("[0-9]{8}[A-Z]{1}");
+            
+            if (!valido) {
+                System.err.println("Falta la LETRA");
+                valido = respuesta.matches("[0-9]{8}");
+                if (!valido) {
+                    System.err.println("Faltan algun numero.");
+                    
+                }else{
+                    int n=Integer.parseInt(respuesta);
+                    respuesta=respuesta+letraNIF(n);
+                    System.out.println(respuesta);
+                }
+               
+            }else{
+                
+            }
+        } while (!valido);
+        System.out.println("NIF correcto. ");
+  }
+   static char letraNIF(int n){
+            int resul=resto(n);
+            char letra=' ';
+            for (int i = 0; i < 22; i++) {
+                letra=(char)letraNIF2.charAt(resul);
+            }
+        return letra;
+                
+    }
+   static int resto(int n){
+       int resultado = n%23;
+       System.out.println(resultado);
+       return resultado;
+   }
+}
