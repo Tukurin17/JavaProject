@@ -10,7 +10,6 @@ package validanif;
  * @author Juan Andres
  */
 import ES.ES;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 
 public class ValidaNIF {
 
